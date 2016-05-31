@@ -1,11 +1,10 @@
 {
-  "name": "adminlte",
-  "version": "2.0.3",
-  "homepage": "http://almsaeedstudio.com",
+  "name": "sdw-immo-back-office",
+  "homepage": "",
   "authors": [
-    "Abdullah Almsaeed <almasaeed2010@gmail.com>"
+    "Brian soufir <briansoufir4@hotmail.com>"
   ],
-  "description": "Admin dashboard and control panel template",
+  "description": "Admin dashboard and control panel ",
   "main": [
     "index2.html",
     "dist/css/AdminLTE.css",
@@ -29,11 +28,6 @@
     "node_modules",
     "bower_components",
     "composer.json",
-    "documentaion"
-  ],
-  "dependencies": {
-    "angular-chart.js": "~0.6.0",
-    "angular-bootstrap": "~0.12.1",
-    "smoothscroll": "~0.0.4"
-  }
+    "documentation"
+  ]
 }
