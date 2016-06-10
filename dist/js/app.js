@@ -735,7 +735,7 @@ function _init() {
           var ele = $(this).parents("li").first();
           ele.toggleClass("done");
           settings.onCheck.call(ele);
-        });
+        }); 
 
         $('input', this).on('ifUnchecked', function () {
           var ele = $(this).parents("li").first();
