@@ -52,7 +52,6 @@
     "node": ">=0.10.x"
   },
   "scripts": {
-    "start": "gulp serve",
     "test": "gulp travis"
   }
 }
