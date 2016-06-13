@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.DS_Store
 *.log
 *.zip
@@ -9,3 +10,28 @@
 ad.js
 TODO
 test.html
+||||||| merged common ancestors
+=======
+# general
+.idea
+.DS_Store
+*~
+.sass-cache
+
+# package control
+node_modules
+client/src/vendor
+
+# logs
+npm-debug.log
+
+# build
+build/tmp
+build/dist
+
+#test
+client/test/screenshots/*
+!client/test/screenshots/README.md
+client/test/unit-results/*
+!client/test/unit-results/README.md
+>>>>>>> master
