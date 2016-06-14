@@ -34,19 +34,39 @@
 
   angular.module('app', [
       'ui.router',
-      'home',
-      //'app.dashboard',
-      'app.header',
-      'app.footer',
       'common.filters.uppercase',
       'common.interceptors.http',
+      'AdminLTE',
+      'app.header',
+      'app.footer',
+      'home',
+
       'templates',
 
-      'AdminLTE'
+      // Users
+      'app.directives.users',
+      'app.routes.users',
+      'app.services.users',
+
 
 
 
     ])
+    .constant("API", {
+        "URL": "https://sdw-immo-backend.herokuapp.com/",
+        //"KEY": "FMpobv25eCmopiv5z57cZMovjz28vaPibve6",
+        //"ID_OP":66
+    })
+    .value('value_user', {
+      idUser:'',
+      nom:'',
+      prenom:'',
+      pseudo:'',
+      email:'',
+      sessionId:'',
+      idOperation:''
+    })    
+
     .config(config)
     .run(run)
     .controller('MainCtrl', MainCtrl)
