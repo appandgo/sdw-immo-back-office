@@ -47,6 +47,9 @@
 
       'templates',
 
+      // Components
+      'app.directives.components.lightState',
+
       // Users
       'app.directives.users',
       'app.routes.users',
@@ -57,11 +60,15 @@
       'app.routes.agencies',
       'app.services.agencies',
 
-      // Agences
+      // Rent adverts
       'app.directives.adverts.rent',
       'app.routes.adverts.rent',
       'app.services.adverts.rent',
 
+      // Sale adverts
+      'app.directives.adverts.sale',
+      'app.routes.adverts.sale',
+      'app.services.adverts.sale',
 
 
     ])
