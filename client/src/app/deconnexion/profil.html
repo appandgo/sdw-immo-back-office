@@ -1,0 +1,27 @@
+<ion-view view-title="Profil">
+  <ion-content>
+
+
+
+
+  <div class="card" >
+      <div class="item item-divider">Prénom</div>
+      <div class="item item-text-wrap">{{infos.prenom}}</div>
+  </div> 
+  <div class="card" >
+      <div class="item item-divider">Nom</div>
+      <div class="item item-text-wrap">{{infos.nom}}</div>
+  </div> 
+
+    <div id="logout-button bar-footer">
+      <form ng-submit="doLogout()"
+          <label class="item">
+            <button class="button button-block button-energized" type="submit">Deconnexion</button>
+          </label>
+      </form>
+    </div>
+
+
+
+  </ion-content>
+</ion-view>
