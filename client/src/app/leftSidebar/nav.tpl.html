@@ -29,21 +29,21 @@
                 <span class="label label-primary pull-right">1200</span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Vente <span class="label label-primary pull-right">1000</span></a></li>
-                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Location <span class="label label-primary pull-right">200</span></a></li>
+                <li><a ui-sref="root.sale-adverts"><i class="fa fa-circle-o"></i> Vente <span class="label label-primary pull-right">1000</span></a></li>
+                <li><a ui-sref="root.rent-adverts"><i class="fa fa-circle-o"></i> Location <span class="label label-primary pull-right">200</span></a></li>
                 
                 
               </ul>
             </li>
 
-            <li>
-              <a href="">
+            <li ng-class="{ active: isActive('/agencies')}" >
+              <a ui-sref="root.agencies" >
                 <i class="fa fa-building-o"></i> <span>Agences</span>
               </a>
             </li>
 
-            <li>
-              <a ui-sref="root.users">
+            <li class="treeview">
+              <a ui-sref="root.users" >
                 <i class="fa fa-users"></i> <span>Utilisateurs</span>
                 
               </a>
