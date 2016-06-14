@@ -17,30 +17,30 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Tabl</h3>
+              <h3 class="box-title">_</h3>
             </div><!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr>
+                    <th>Etat</th>
                     <th>Prénom</th>
                     <th>Nom</th>
                     <th>Pseudo</th>
                     <th>Rôle</th>
                     <th>Mail</th>
-                    <th>Télephone</th>
                     <th>Gestion</th>
                   </tr>
                 </thead>
                 <tbody>
 
-                  <tr ng-repeat="user in vm.users" >
+                  <tr ng-repeat="user in vm.users"   ><!-- ng-show="user.state" -->
+                    <th>{{user.state}}</th>
                     <th>{{user.first_name}}</th>
                     <th>{{user.last_name}}</th>
                     <th>{{user.username}}</th>
-                    <th>{{user.role}}</th>
+                    <th>{{user.role_name}}({{user.role}})</th>
                     <th>{{user.email}}</th>
-                    <th>{{user.phone}}</th>
                     <th>-</th>
                   </tr>
 
