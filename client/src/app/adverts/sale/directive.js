@@ -1,24 +1,24 @@
 (function() {
     'use strict';
 
-    function listAgenciesDirective() {
+    function listSaleAdvertsDirective() {
         return {
             restrict: 'EA',
             replace: true,
-            templateUrl: './src/app/agencies/template.html',
+            templateUrl: './src/app/adverts/sale/template.html',
             scope: {},
             controllerAs: 'vm',
             bindToController: true,
             /* jshint unused:false*/
-            controller: function($log, AgenciesService) {
+            controller: function($log, SaleAdvertsService) {
                 var vm=this;
-                AgenciesService.getAgencies()
-                    .then(function(agencies) {
-                        console.log('agencies in directives :',agencies.data);
-                        vm.agencies = agencies.data;
+                SaleAdvertsService.getSaleAdverts()
+                    .then(function(saleAdverts) {
+                        console.log('SaleAdverts in directives :',saleAdverts.data);
+                        vm.saleAdverts = saleAdverts.data;
 
                     }, function(error){
-                        $log.error('Error agencies', error);
+                        $log.error('Error SaleAdverts', error);
                     });
                 
             },
@@ -27,7 +27,7 @@
         };
     }
 
-angular.module('app.directives.agencies', ['app.services.agencies'])
-    .directive('listAgencies', listAgenciesDirective); 
+angular.module('app.directives.adverts.sale', ['app.services.adverts.sale'])
+    .directive('listSaleAdverts', listSaleAdvertsDirective); 
 
 })();

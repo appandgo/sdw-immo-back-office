@@ -1,20 +1,20 @@
 (function(){
     'use strict'
 
-    function AgenciesService($http,$log,API){
+    function SaleAdvertsService($http,$log,API){
         var service = {};
-        service.agencies = [];
+        service.saleAdverts = [];
         //var key = 'd07241f7f943c6861fa0a520b52cc049';
-        service.getAgencies = function () {
+        service.getSaleAdverts = function () {
             $log.info('Get all the agencies');
-            return $http.get(API.URL+'agencies',{
+            return $http.get(API.URL+'sales',{
                 params:{
                     //api_key: key
                 },
             })
             .success(function(data) {
                 $log.info('Get all the agencies', data);
-                service.agencies = data
+                service.saleAdverts = data
             })
             .error(function(error) {
                 $log.error('Error', error);
@@ -24,7 +24,7 @@
         return service;
     }
 
-angular.module('app.services.agencies', [])
-    .factory('AgenciesService', AgenciesService);
+angular.module('app.services.adverts.sale', [])
+    .factory('SaleAdvertsService', SaleAdvertsService);
 })()
 
