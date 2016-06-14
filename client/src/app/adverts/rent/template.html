@@ -7,7 +7,8 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li class="active">Agences</li>
+        <li>annonces</li>
+        <li class="active">location</li>
       </ol>
     </section>
 
@@ -24,9 +25,10 @@
                 <thead>
                   <tr>
                     <th>Etat</th>
-                    <th>Nom</th>
-                    <th>Email</th>
-                    <th>Télephone</th>
+                    <th>Titre</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                    <th>Loyer</th>
                     <th>Adresse</th>
                     <th>Gestion</th>
                   </tr>
@@ -34,10 +36,11 @@
                 <tbody>
 
                   <tr ng-repeat="user in vm.rentAdverts"   ><!-- ng-show="user.state" -->
-                    <th>{{user.state}}</th>
-                    <th>{{user.name}}</th>
-                    <th>{{user.email}}</th>
-                    <th>{{user.phone}}</th>
+                    <th><light-state state="user.state" ></light-state></th>
+                    <th>{{user.title}}</th>
+                    <th>{{user.description}}</th>
+                    <th>{{user.type}}</th>
+                    <th>{{user.characteristics.rent | currency: "" : 2}} €</th>
                     <th>{{user.address.building}} {{user.address.street}} {{user.address.zipcode}}, {{user.address.city}} {{user.address.country}} </th>
                     <th>-</th>
                   </tr>

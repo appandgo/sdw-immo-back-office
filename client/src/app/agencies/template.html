@@ -34,7 +34,7 @@
                 <tbody>
 
                   <tr ng-repeat="user in vm.agencies"   ><!-- ng-show="user.state" -->
-                    <th>{{user.state}}</th>
+                    <th><light-state state="user.state" ></light-state></th>
                     <th>{{user.name}}</th>
                     <th>{{user.email}}</th>
                     <th>{{user.phone}}</th>
