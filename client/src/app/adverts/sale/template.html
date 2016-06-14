@@ -2,12 +2,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Utilisateurs
-        <small>gestion des utilisateurs du back-office</small>
+        Agences
+        <small>gestion des agences du back-office</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li class="active">Users</li>
+        <li class="active">Agences</li>
       </ol>
     </section>
 
@@ -24,23 +24,21 @@
                 <thead>
                   <tr>
                     <th>Etat</th>
-                    <th>Prénom</th>
                     <th>Nom</th>
-                    <th>Pseudo</th>
-                    <th>Rôle</th>
-                    <th>Mail</th>
+                    <th>Email</th>
+                    <th>Télephone</th>
+                    <th>Adresse</th>
                     <th>Gestion</th>
                   </tr>
                 </thead>
                 <tbody>
 
-                  <tr ng-repeat="user in vm.users"   ><!-- ng-show="user.state" -->
+                  <tr ng-repeat="user in vm.agencies"   ><!-- ng-show="user.state" -->
                     <th>{{user.state}}</th>
-                    <th>{{user.first_name}}</th>
-                    <th>{{user.last_name}}</th>
-                    <th>{{user.username}}</th>
-                    <th>{{user.role_name}}({{user.role}})</th>
+                    <th>{{user.name}}</th>
                     <th>{{user.email}}</th>
+                    <th>{{user.phone}}</th>
+                    <th>{{user.address.building}} {{user.address.street}} {{user.address.zipcode}}, {{user.address.city}} {{user.address.country}} </th>
                     <th>-</th>
                   </tr>
 

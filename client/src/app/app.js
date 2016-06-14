@@ -26,6 +26,10 @@
 
   function MainCtrl($log) {
     $log.debug('MainCtrl laoded!');
+
+    this.isActive = function (viewLocation) { 
+      return viewLocation === $location.path();
+    };
   }
 
   function run($log) {
@@ -48,6 +52,15 @@
       'app.routes.users',
       'app.services.users',
 
+      // Agences
+      'app.directives.agencies',
+      'app.routes.agencies',
+      'app.services.agencies',
+
+      // Agences
+      'app.directives.adverts.rent',
+      'app.routes.adverts.rent',
+      'app.services.adverts.rent',
 
 
 
