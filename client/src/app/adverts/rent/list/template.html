@@ -26,7 +26,6 @@
                   <tr>
                     <th>Etat</th>
                     <th>Titre</th>
-                    <th>Description</th>
                     <th>Type</th>
                     <th>Loyer</th>
                     <th>Adresse</th>
@@ -38,7 +37,6 @@
                   <tr ng-repeat="user in vm.rentAdverts"   ><!-- ng-show="user.state" -->
                     <th><light-state state="user.state" ></light-state></th>
                     <th>{{user.title}}</th>
-                    <th>{{user.description}}</th>
                     <th>{{user.type}}</th>
                     <th>{{user.characteristics.rent | currency: "" : 2}} €</th>
                     <th>{{user.address.building}} {{user.address.street}} {{user.address.zipcode}}, {{user.address.city}} {{user.address.country}} </th>
