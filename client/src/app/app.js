@@ -60,10 +60,14 @@
       'app.routes.agencies',
       'app.services.agencies',
 
-      // Rent adverts
-      'app.directives.adverts.rent',
-      'app.routes.adverts.rent',
-      'app.services.adverts.rent',
+      // List Rent adverts
+      'app.directives.adverts.rent.list',
+      'app.routes.adverts.rent.list',
+      'app.services.adverts.rent.list',      
+
+      // Add Rent adverts
+      'app.directives.adverts.rent.add',
+      'app.services.adverts.rent.add',
 
       // Sale adverts
       'app.directives.adverts.sale',
