@@ -24,7 +24,7 @@
         return service;
     }
 
-angular.module('app.services.adverts.rent', [])
+angular.module('app.services.adverts.rent.list', [])
     .factory('RentAdvertsService', RentAdvertsService);
 })()
 

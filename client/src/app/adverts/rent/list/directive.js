@@ -5,7 +5,7 @@
         return {
             restrict: 'EA',
             replace: true,
-            templateUrl: './src/app/adverts/rent/template.html',
+            templateUrl: './src/app/adverts/rent/list/template.html',
             scope: {},
             controllerAs: 'vm',
             bindToController: true,
@@ -27,7 +27,7 @@
         };
     }
 
-angular.module('app.directives.adverts.rent', ['app.services.adverts.rent'])
+angular.module('app.directives.adverts.rent.list', ['app.services.adverts.rent.list'])
     .directive('listRentAdverts', listRentAdvertsDirective); 
 
 })();
