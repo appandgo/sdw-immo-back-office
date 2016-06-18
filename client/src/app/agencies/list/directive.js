@@ -5,14 +5,14 @@
         return {
             restrict: 'EA',
             replace: true,
-            templateUrl: './src/app/agencies/template.html',
+            templateUrl: './src/app/agencies/list/template.html',
             scope: {},
             controllerAs: 'vm',
             bindToController: true,
             /* jshint unused:false*/
-            controller: function($log, AgenciesService) {
+            controller: function($log, ListAgenciesService) {
                 var vm=this;
-                AgenciesService.getAgencies()
+                ListAgenciesService.getAgencies()
                     .then(function(agencies) {
                         //console.log('agencies in directives :',agencies.data);
                         vm.agencies = agencies.data;
@@ -27,7 +27,7 @@
         };
     }
 
-angular.module('app.directives.agencies', ['app.services.agencies'])
+angular.module('app.directives.agencies.list', ['app.services.agencies.list'])
     .directive('listAgencies', listAgenciesDirective); 
 
 })();

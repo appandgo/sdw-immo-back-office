@@ -13,7 +13,7 @@
         });
     }
 
-    angular.module('app.routes.agencies', ['app.directives.agencies'])
+    angular.module('app.routes.agencies.list', ['app.directives.agencies.list'])
     .config(config);
 })();
 
