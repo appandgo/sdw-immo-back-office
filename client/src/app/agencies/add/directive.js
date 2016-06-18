@@ -10,9 +10,9 @@
             controllerAs: 'vm',
             bindToController: true,
             /* jshint unused:false*/
-            controller: function($log, RentAdvertsService) {
+            controller: function($log, AddAgenciesService) {
                 var vm=this;
-                RentAdvertsService.getRentAdverts()
+                AddAgenciesService.addAgencie()
                     .then(function(rentAdverts) {
                         console.log('RentAdverts in directives :',rentAdverts.data);
                         vm.rentAdverts = rentAdverts.data;
@@ -27,7 +27,7 @@
         };
     }
 
-angular.module('app.directives.adverts.rent.add', ['app.services.adverts.rent.add'])
+angular.module('app.directives.agencies.add', ['app.services.agencies.add'])
     .directive('addRentAdverts', addRentAdvertsDirective); 
 
 })();

@@ -4,7 +4,7 @@
     function ListAgenciesService($http,$log,API){
         var service = {};
         service.agencies = [];
-        //var key = 'd07241f7f943c6861fa0a520b52cc049';
+
         service.getAgencies = function () {
             $log.info('Get all the agencies');
             return $http.get(API.URL+'agencies',{

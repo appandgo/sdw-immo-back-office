@@ -6,14 +6,14 @@
         service.rentAdverts = [];
         //var key = 'd07241f7f943c6861fa0a520b52cc049';
         service.getRentAdverts = function () {
-            $log.info('Get all the agencies');
+            $log.info('Get all the rent adverts');
             return $http.get(API.URL+'rents',{
                 params:{
                     //api_key: key
                 },
             })
             .success(function(data) {
-                $log.info('Get all the agencies', data);
+                $log.info('Get all the rent adverts', data);
                 service.rentAdverts = data
             })
             .error(function(error) {
