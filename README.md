@@ -124,3 +124,27 @@ Image Credits
 ||||||| merged common ancestors
 =======
 
+
+
+jshint
+
+<<<<<<< HEAD
+{
+  "asi"      : true,
+  "browser"  : true,
+  "eqeqeq"   : false,
+  "eqnull"   : true,
+  "es3"      : true,
+  "expr"     : true,
+  "jquery"   : true,
+  "latedef"  : "nofunc",
+  "laxbreak" : true,
+  "nonbsp"   : true,
+  "strict"   : true,
+  "undef"    : true,
+  "unused"   : true,
+  // External variabls and plugins
+  "predef":  [ "AdminLTEOptions", "FastClick", "moment", "Morris", "Chart" ]
+}
+||||||| merged common ancestors
+=======
