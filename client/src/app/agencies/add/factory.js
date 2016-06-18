@@ -4,7 +4,7 @@
     function AddAgenciesService($http,$log,API){
         var service = {};
         service.agencies = [];
-        //var key = 'd07241f7f943c6861fa0a520b52cc049';
+
         service.addAgencie = function () {
             $log.info('add agencies');
             return $http.get(API.URL+'rents',{
