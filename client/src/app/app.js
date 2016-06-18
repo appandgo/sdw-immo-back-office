@@ -55,10 +55,10 @@
       'app.routes.users',
       'app.services.users',
 
-      // Agences
-      'app.directives.agencies',
-      'app.routes.agencies',
-      'app.services.agencies',
+      // List Agencies
+      'app.directives.agencies.list',
+      'app.routes.agencies.list',
+      'app.services.agencies.list',
 
       // List Rent adverts
       'app.directives.adverts.rent.list',
