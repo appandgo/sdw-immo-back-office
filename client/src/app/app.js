@@ -47,21 +47,32 @@
 
       'templates',
 
+      // Components
+      'app.directives.components.lightState',
+
       // Users
       'app.directives.users',
       'app.routes.users',
       'app.services.users',
 
-      // Agences
-      'app.directives.agencies',
-      'app.routes.agencies',
-      'app.services.agencies',
+      // List Agencies
+      'app.directives.agencies.list',
+      'app.routes.agencies.list',
+      'app.services.agencies.list',
 
-      // Agences
-      'app.directives.adverts.rent',
-      'app.routes.adverts.rent',
-      'app.services.adverts.rent',
+      // List Rent adverts
+      'app.directives.adverts.rent.list',
+      'app.routes.adverts.rent.list',
+      'app.services.adverts.rent.list',      
 
+      // Add Rent adverts
+      'app.directives.adverts.rent.add',
+      'app.services.adverts.rent.add',
+
+      // Sale adverts
+      'app.directives.adverts.sale',
+      'app.routes.adverts.sale',
+      'app.services.adverts.sale',
 
 
     ])

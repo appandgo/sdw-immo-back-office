@@ -1,7 +1,7 @@
 (function(){
     'use strict'
 
-    function AgenciesService($http,$log,API){
+    function ListAgenciesService($http,$log,API){
         var service = {};
         service.agencies = [];
         //var key = 'd07241f7f943c6861fa0a520b52cc049';
@@ -24,7 +24,7 @@
         return service;
     }
 
-angular.module('app.services.agencies', [])
-    .factory('AgenciesService', AgenciesService);
+angular.module('app.services.agencies.list', [])
+    .factory('ListAgenciesService', ListAgenciesService);
 })()
 

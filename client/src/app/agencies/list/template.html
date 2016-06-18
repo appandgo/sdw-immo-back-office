@@ -2,8 +2,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Annonces de biens en location
-        <small>gestion des annonces de biens mis en location</small>
+        Agences
+        <small>gestion des agences du back-office</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
@@ -33,8 +33,8 @@
                 </thead>
                 <tbody>
 
-                  <tr ng-repeat="user in vm.rentAdverts"   ><!-- ng-show="user.state" -->
-                    <th>{{user.state}}</th>
+                  <tr ng-repeat="user in vm.agencies"   ><!-- ng-show="user.state" -->
+                    <th><light-state state="user.state" ></light-state></th>
                     <th>{{user.name}}</th>
                     <th>{{user.email}}</th>
                     <th>{{user.phone}}</th>

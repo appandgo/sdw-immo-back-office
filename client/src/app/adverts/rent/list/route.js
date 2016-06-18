@@ -13,7 +13,7 @@
         });
     }
 
-    angular.module('app.routes.adverts.rent', ['app.directives.adverts.rent'])
+    angular.module('app.routes.adverts.rent.list', ['app.directives.adverts.rent.list'])
     .config(config);
 })();
 

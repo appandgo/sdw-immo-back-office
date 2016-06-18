@@ -3,17 +3,17 @@
 
     function config($stateProvider) {
         $stateProvider
-        .state('root.agencies',{
-            url: '/agencies',
+        .state('root.sale-adverts',{
+            url: '/adverts/sale',
             views: {
                 '@': {
-                    template: '<list-agencies></list-agencies>',
+                    template: '<list-sale-adverts></list-sale-adverts>',
                 }
             }
         });
     }
 
-    angular.module('app.routes.agencies', ['app.directives.agencies'])
+    angular.module('app.routes.adverts.sale', ['app.directives.adverts.sale'])
     .config(config);
 })();
 
