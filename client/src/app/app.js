@@ -7,7 +7,7 @@
 
   function config($stateProvider, $urlRouterProvider, $logProvider, $httpProvider) {
     $urlRouterProvider.otherwise('/');
-    $logProvider.debugEnabled(true);
+    $logProvider.debugEnabled(false);
     $httpProvider.interceptors.push('httpInterceptor');
     $stateProvider
       .state('root', {
@@ -41,38 +41,52 @@
       'common.filters.uppercase',
       'common.interceptors.http',
       'AdminLTE',
+
       'app.header',
       'app.footer',
       'home',
 
+      //'templates',
       'templates',
 
       // Components
       'app.directives.components.lightState',
 
-      // Users
-      'app.directives.users',
-      'app.routes.users',
-      'app.services.users',
+      // List Users
+      'app.directives.users.list',
+      'app.routes.users.list',
+      'app.services.users.list',
+      // Add Users
+      'app.directives.users.add',
+      'app.services.users.add',
+
 
       // List Agencies
       'app.directives.agencies.list',
       'app.routes.agencies.list',
       'app.services.agencies.list',
+      // Add Agencies
+      'app.directives.agencies.add',
+      'app.services.agencies.add',
+
 
       // List Rent adverts
       'app.directives.adverts.rent.list',
       'app.routes.adverts.rent.list',
       'app.services.adverts.rent.list',      
-
       // Add Rent adverts
       'app.directives.adverts.rent.add',
       'app.services.adverts.rent.add',
 
-      // Sale adverts
-      'app.directives.adverts.sale',
-      'app.routes.adverts.sale',
-      'app.services.adverts.sale',
+
+      // List Sale adverts
+      'app.directives.adverts.sale.list',
+      'app.routes.adverts.sale.list',
+      'app.services.adverts.sale.list',
+
+      // Add Sale adverts
+      'app.directives.adverts.sale.add',
+      'app.services.adverts.sale.add',
 
 
     ])

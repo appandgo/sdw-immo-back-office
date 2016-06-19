@@ -12,14 +12,11 @@
             controllerAs: 'vm',
             bindToController: true,
             /* jshint unused:false*/
-            controller: function($log) {
-                //var vm=this;
+            controller: function() {
 
-
-                //vm.state=this.state;
             },
             link: function(scope, elm, attrs){
-                console.log(scope.state);
+                //console.log(scope.state);
                 //vm.state = scope.state;
 
             }
