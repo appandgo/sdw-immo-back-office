@@ -13,7 +13,7 @@
         });
     }
 
-    angular.module('app.routes.users', ['app.directives.users'])
+    angular.module('app.routes.users.list', ['app.directives.users.list'])
     .config(config);
 })();
 

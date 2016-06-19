@@ -1,7 +1,7 @@
 (function(){
     'use strict'
 
-    function UsersService($http,$log,API){
+    function ListUsersService($http,$log,API){
         var service = {};
         service.users = [];
         //var key = 'd07241f7f943c6861fa0a520b52cc049';
@@ -13,7 +13,7 @@
                 },
             })
             .success(function(data) {
-                $log.info('Get all the users', data);
+                $log.debug('Get all the users  ', data);
                 service.users = data
             })
             .error(function(error) {
@@ -24,7 +24,7 @@
         return service;
     }
 
-angular.module('app.services.users', [])
-    .factory('UsersService', UsersService);
+angular.module('app.services.users.list', [])
+    .factory('ListUsersService', ListUsersService);
 })()
 

@@ -14,7 +14,7 @@
                 var vm=this;
                 ListAgenciesService.getAgencies()
                     .then(function(agencies) {
-                        //console.log('agencies in directives :',agencies.data);
+                        //$log.debug('agencies in directives :',agencies.data);
                         vm.agencies = agencies.data;
 
                     }, function(error){

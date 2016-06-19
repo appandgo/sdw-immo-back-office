@@ -1,20 +1,20 @@
 (function(){
     'use strict'
 
-    function AddAgenciesService($http,$log,API){
+    function AddUsersService($http,$log,API){
         var service = {};
-        service.agencies = [];
+        service.rentAdverts = [];
 
-        service.addAgencie = function () {
-            $log.debug('add agencies');
+        service.addUser = function () {
+
             return $http.get(API.URL+'rents',{
                 params:{
                     //api_key: key
                 },
             })
             .success(function(data) {
-                $log.info('add agencies', data);
-                service.agencies = data
+                $log.debug('add user factory', data);
+                service.rentAdverts = data
             })
             .error(function(error) {
                 $log.error('Error', error);
@@ -24,7 +24,7 @@
         return service;
     }
 
-angular.module('app.services.agencies.add', [])
-    .factory('AddAgenciesService', AddAgenciesService);
+angular.module('app.services.users.add', [])
+    .factory('AddUsersService', AddUsersService);
 })()
 
