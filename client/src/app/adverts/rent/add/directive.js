@@ -14,7 +14,7 @@
                 var vm=this;
                 RentAdvertsService.getRentAdverts()
                     .then(function(rentAdverts) {
-                        console.log('RentAdverts in directives :',rentAdverts.data);
+                        $log.debug('RentAdverts in directives :',rentAdverts.data);
                         vm.rentAdverts = rentAdverts.data;
 
                     }, function(error){
