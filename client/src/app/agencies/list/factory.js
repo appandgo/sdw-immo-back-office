@@ -6,14 +6,14 @@
         service.agencies = [];
 
         service.getAgencies = function () {
-            $log.info('Get all the agencies');
+            $log.debug('Get all the agencies : ');
             return $http.get(API.URL+'agencies',{
                 params:{
                     //api_key: key
                 },
             })
             .success(function(data) {
-                $log.info('Get all the agencies', data);
+                $log.debug('Get all the agencies (factory) ', data);
                 service.agencies = data
             })
             .error(function(error) {
@@ -21,10 +21,12 @@
             })
 
         };
+        
         return service;
     }
 
 angular.module('app.services.agencies.list', [])
-    .factory('ListAgenciesService', ListAgenciesService);
+    .factory('ListAgenciesService', ListAgenciesService)
+    .factory('AgenciesService', ListAgenciesService);
 })()
 
