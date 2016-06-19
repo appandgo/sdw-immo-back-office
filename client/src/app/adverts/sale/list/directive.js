@@ -5,7 +5,7 @@
         return {
             restrict: 'EA',
             replace: true,
-            templateUrl: './src/app/adverts/sale/template.html',
+            templateUrl: './src/app/adverts/sale/list/template.html',
             scope: {},
             controllerAs: 'vm',
             bindToController: true,
@@ -14,7 +14,7 @@
                 var vm=this;
                 SaleAdvertsService.getSaleAdverts()
                     .then(function(saleAdverts) {
-                        console.log('SaleAdverts in directives :',saleAdverts.data);
+                        $log.debug('SaleAdverts in directives :',saleAdverts.data);
                         vm.saleAdverts = saleAdverts.data;
 
                     }, function(error){
@@ -27,7 +27,7 @@
         };
     }
 
-angular.module('app.directives.adverts.sale', ['app.services.adverts.sale'])
+angular.module('app.directives.adverts.sale.list', ['app.services.adverts.sale.list'])
     .directive('listSaleAdverts', listSaleAdvertsDirective); 
 
 })();
