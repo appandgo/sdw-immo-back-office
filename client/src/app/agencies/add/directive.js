@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    function addRentAdvertsDirective() {
+    function addAgenciesDirective() {
         return {
             restrict: 'EA',
             replace: true,
@@ -12,13 +12,18 @@
             /* jshint unused:false*/
             controller: function($log, AddAgenciesService) {
                 var vm=this;
+
+                var addAgencie = function(){
+                    $log.debug('click add agencie');
+                };
+
                 AddAgenciesService.addAgencie()
-                    .then(function(rentAdverts) {
-                        console.log('RentAdverts in directives :',rentAdverts.data);
-                        vm.rentAdverts = rentAdverts.data;
+                    .then(function(result) {
+                        $log.debug('add agencies in directives :',result.data);
+                        vm.agencie = result.data;
 
                     }, function(error){
-                        $log.error('Error RentAdverts', error);
+                        $log.error('Error add agencies', error);
                     });
                 
             },
@@ -28,6 +33,6 @@
     }
 
 angular.module('app.directives.agencies.add', ['app.services.agencies.add'])
-    .directive('addRentAdverts', addRentAdvertsDirective); 
+    .directive('addAgencie', addAgenciesDirective); 
 
 })();

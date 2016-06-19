@@ -1,12 +1,12 @@
   <div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSaleAdvert">Add</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAgencie">Add</button>
 
-    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="addSaleAdvert">
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="addAgencie">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="gridSystemModalLabel">Ajouter un bien à vendre</h4>
+            <h4 class="modal-title" id="gridSystemModalLabel">Ajouter une Agence </h4>
           </div>
           <div class="modal-body">
 
@@ -24,7 +24,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-            <button type="button" class="btn btn-primary">Enregistrer</button>
+            <button type="button" class="btn btn-primary" ng-click="addAgencie()">Enregistrer</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->

@@ -6,7 +6,7 @@
         service.agencies = [];
 
         service.addAgencie = function () {
-            $log.info('add agencies');
+            $log.debug('add agencies');
             return $http.get(API.URL+'rents',{
                 params:{
                     //api_key: key
