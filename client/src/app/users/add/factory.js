@@ -7,7 +7,7 @@
 
         service.addUser = function () {
 
-            return $http.get(API.URL+'rents',{
+            return $http.get(API.URL+'users',{
                 params:{
                     //api_key: key
                 },

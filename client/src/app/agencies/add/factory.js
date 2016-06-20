@@ -5,16 +5,31 @@
         var service = {};
         service.agencies = [];
 
-        service.addAgencie = function () {
+        service.addAgencie = function (agencie) {
             $log.debug('add agencies');
-            return $http.get(API.URL+'rents',{
-                params:{
-                    //api_key: key
-                },
-            })
+
+
+
+            var data ={
+                name :  agencie.name ,
+                phone : agencie.phone,
+                email : agencie.email,
+
+                country : agencie.address.country,
+                city : agencie.address.city,
+                street : agencie.address.street,
+                building : agencie.address.building,
+                zipcode : agencie.address.zipcode,
+
+            };
+
+
+            console.log(data);
+
+            return $http.post(API.URL+'agencies',data)
             .success(function(data) {
-                $log.info('add agencies', data);
-                service.agencies = data
+                $log.debug('add agencies', data);
+                //service.agencies = data
             })
             .error(function(error) {
                 $log.error('Error', error);

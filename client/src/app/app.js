@@ -7,7 +7,7 @@
 
   function config($stateProvider, $urlRouterProvider, $logProvider, $httpProvider) {
     $urlRouterProvider.otherwise('/');
-    $logProvider.debugEnabled(false);
+    $logProvider.debugEnabled(true);
     $httpProvider.interceptors.push('httpInterceptor');
     $stateProvider
       .state('root', {
@@ -24,11 +24,19 @@
       });
   }
 
-  function MainCtrl($log) {
+  function MainCtrl($log,$state) {
     $log.debug('MainCtrl laoded!');
 
     this.isActive = function (viewLocation) { 
-      return viewLocation === $location.path();
+          $log.info(' is active ? !');
+
+      //return viewLocation === $location.path();
+      $log.info($state.is(viewLocation));
+      $log.info($state.is('.users'));
+      $log.info($state.include('root'));
+      $log.info($state.is('root.users'));
+
+      $state.is(viewLocation);
     };
   }
 
