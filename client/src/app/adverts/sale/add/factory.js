@@ -1,30 +1,60 @@
 (function(){
     'use strict'
 
-    function SaleAdvertsService($http,$log,API){
+    function AddSaleAdvertService($http,$log,$state,API){
         var service = {};
-        service.saleAdverts = [];
-        //var key = 'd07241f7f943c6861fa0a520b52cc049';
-        service.getSaleAdverts = function () {
-            $log.debug('Get all the sale adverts');
-            return $http.get(API.URL+'sales',{
-                params:{
-                    //api_key: key
-                },
-            })
-            .success(function(data) {
-                $log.debug('Get all the sale adverts', data);
-                service.saleAdverts = data
-            })
-            .error(function(error) {
-                $log.error('Error', error);
-            })
+        service.saleAdvert = [];
+
+        service.addSaleAdvert = function (saleAdvert) {
+
+           var data ={
+                state : saleAdvert.state,
+                name :  saleAdvert.name ,
+                phone : saleAdvert.phone,
+                email : saleAdvert.email,
+
+                description : saleAdvert.description,
+                type : saleAdvert.type,
+
+                country : saleAdvert.address.country,
+                city : saleAdvert.address.city,
+                street : saleAdvert.address.street,
+                building : saleAdvert.address.building,
+                zipcode : saleAdvert.address.zipcode,
+
+                area : saleAdvert.characteristics.area,
+                rooms : saleAdvert.characteristics.rooms,
+                bedrooms : saleAdvert.characteristics.bedrooms,
+                price : saleAdvert.characteristics.price,
+
+                first_name : saleAdvert.owner.first_name,
+                last_name : saleAdvert.owner.last_name,
+                phone : saleAdvert.owner.phone,
+
+            };
+
+
+            console.log(data);
+
+            return $http.post(API.URL+'sales',data)
+                .success(function(data) {
+                    $log.debug('Factory add sale advert success', data);
+                    service.saleAdvert = data;
+                    $state.reload('root.sale-adverts');
+                })
+                .error(function(error) {
+                    $log.error('Error', error);
+                });
 
         };
+
         return service;
     }
 
+
+
+
 angular.module('app.services.adverts.sale.add', [])
-    .factory('SaleAdvertsService', SaleAdvertsService);
+    .factory('AddSaleAdvertService', AddSaleAdvertService);
 })()
 
