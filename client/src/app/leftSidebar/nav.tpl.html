@@ -16,7 +16,7 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">Menu Principale</li>
-            <li class="active">
+            <li class="">
               <a ui-sref="root.home">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> <!--<i class="fa fa-angle-left pull-right"></i>-->
               </a>
@@ -26,26 +26,25 @@
               <a href="#">
                 <i class="fa fa-files-o"></i>
                 <span>Annonces</span>
-                <span class="label label-primary pull-right">1200</span>
+                <span class="label label-primary pull-right"></span>
               </a>
               <ul class="treeview-menu">
-                <li><a ui-sref="root.sale-adverts"><i class="fa fa-circle-o"></i> Vente <span class="label label-primary pull-right">1000</span></a></li>
-                <li><a ui-sref="root.rent-adverts"><i class="fa fa-circle-o"></i> Location <span class="label label-primary pull-right">200</span></a></li>
+                <li><a ui-sref="root.sale-adverts"><i class="fa fa-circle-o"></i> Vente <span class="label label-primary pull-right"></span></a></li>
+                <li><a ui-sref="root.rent-adverts"><i class="fa fa-circle-o"></i> Location <span class="label label-primary pull-right"></span></a></li>
                 
                 
               </ul>
             </li>
 
-            <li ng-class="{ active: isActive('/agencies')}" >
+            <li  >
               <a ui-sref="root.agencies" >
                 <i class="fa fa-building-o"></i> <span>Agences</span>
               </a>
             </li>
 
-            <li class="treeview">
+            <li ng-class="{active: isActive('root.users')}">
               <a ui-sref="root.users" >
                 <i class="fa fa-users"></i> <span>Utilisateurs</span>
-                
               </a>
             </li>
 <!--
