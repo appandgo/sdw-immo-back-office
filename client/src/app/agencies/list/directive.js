@@ -10,7 +10,7 @@
             controllerAs: 'vm',
             bindToController: true,
             /* jshint unused:false*/
-            controller: function($log, ListAgenciesService) {
+            controller: function($log,$state, ListAgenciesService,DeleteAgenciesService) {
                 var vm=this;
                 ListAgenciesService.getAgencies()
                     .then(function(agencies) {
@@ -20,6 +20,23 @@
                     }, function(error){
                         $log.error('Error agencies', error);
                     });
+
+
+                vm.deleteAgencie = function(id){
+                    $log.debug('delete : ');
+                    $log.debug(id);
+
+                    DeleteAgenciesService.deleteAgencie(id)
+                    .then(function(agencie) {
+                        $log.debug('agencies in directives :',agencie.data);
+                        //vm.agencies = agencies.data;
+                        $state.reload('root.agencies');
+                        //alert('L\'agence ('+agencie.data.name+') a été supprimé');
+
+                    }, function(error){
+                        $log.error('Error agencies', error);
+                    });
+                };
                 
             },
             link: function(scope, elm, attrs){
