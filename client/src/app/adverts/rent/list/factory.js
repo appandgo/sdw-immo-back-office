@@ -24,7 +24,28 @@
         return service;
     }
 
+    function DeleteRentAdvertService($http,$log,API){
+        var service = {};
+        service.rentAdvert = [];
+
+        service.deleteRentAdvert = function (id) {
+            $log.debug('delete rentAdvert : ',id);
+            return $http.delete(API.URL+'rents/'+id)
+            .success(function(data) {
+                $log.debug('delete rentAdvert :  ', data);
+                //service.rentAdvert = data
+            })
+            .error(function(error) {
+                $log.error('Error', error);
+            })
+
+        };
+        
+        return service;
+    }
+
 angular.module('app.services.adverts.rent.list', [])
-    .factory('RentAdvertsService', RentAdvertsService);
+    .factory('RentAdvertsService', RentAdvertsService)
+    .factory('DeleteRentAdvertService', DeleteRentAdvertService);
 })()
 
