@@ -10,21 +10,101 @@
           </div>
           <div class="modal-body">
 
+
             <form class="row">
-              <div class="form-group col-md-6">
-                <label for="recipient-name" class="control-label">label:</label>
-                <input type="text" class="form-control" id="recipient-name">
+
+
+              <div class="form-group col-md-12">
+                <label for="recipient-name" class="control-label">Description</label>
+                <textarea ng-model="vm.rentAdvert.description" type="text" class="form-control" id="recipient-name"></textarea>
               </div>
-              <div class="form-group col-md-6">
-                <label for="message-text" class="control-label">label 2:</label>
-                <textarea class="form-control" id="message-text"></textarea>
+
+              <div class="form-group col-md-12 ">
+                <label for="rentAdvertType" class="control-label">Type de bien</label>
+                <select name="singleSelect" ng-model="vm.rentAdvert.type" id="rentAdvertType" class="form-control">
+                  <option value="0" >Appartement</option>
+                  <option value="1">Maison</option>
+                </select>
               </div>
+              <br>
+
+
+
+              <div class="form-group col-md-3">
+                <label for="message-text" class="control-label">Loyer</label>
+                <input ng-model="vm.rentAdvert.characteristics.rent" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="message-text" class="control-label">Superficie</label>
+                <input ng-model="vm.rentAdvert.characteristics.area" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="message-text" class="control-label">Nombre de pièces</label>
+                <input ng-model="vm.rentAdvert.characteristics.rooms" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+
+              <div class="form-group col-md-3">
+                <label for="message-text" class="control-label">Nombre de chambres</label>
+                <input ng-model="vm.rentAdvert.characteristics.bedrooms" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <!--<div class="form-group col-md-3">
+                <label for="message-text" class="control-label">Charges</label>
+                <input ng-model="vm.rentAdvert.characteristics.including_charges" type="text" class="form-control" id="message-text"></input>
+              </div>-->
+
+
+              <div class="form-group col-md-4">
+                <label for="message-text" class="control-label">Prénom du propriétaire</label>
+                <input ng-model="vm.rentAdvert.owner.first_name" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+
+              <div class="form-group col-md-4">
+                <label for="message-text" class="control-label">Nom du propriétaire</label>
+                <input ng-model="vm.rentAdvert.owner.last_name" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="message-text" class="control-label">Téléphone du propriétaire</label>
+                <input ng-model="vm.rentAdvert.owner.phone" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="message-text" class="control-label">N°</label>
+                <input ng-model="vm.rentAdvert.address.building" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="message-text" class="control-label">Rue</label>
+                <input ng-model="vm.rentAdvert.address.street" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="message-text" class="control-label">Code postale</label>
+                <input ng-model="vm.rentAdvert.address.zipcode" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+
+              <div class="form-group col-md-6">
+                <label for="message-text" class="control-label">Ville</label>
+                <input ng-model="vm.rentAdvert.address.city" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="message-text" class="control-label">Pays</label>
+                <input ng-model="vm.rentAdvert.address.country" type="text" class="form-control" id="message-text"></input>
+              </div>
+
             </form>
 
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-            <button type="button" class="btn btn-primary">Enregistrer</button>
+            <button type="button" class="btn btn-primary" ng-click="vm.addRentAdvert()" >Enregistrer</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
