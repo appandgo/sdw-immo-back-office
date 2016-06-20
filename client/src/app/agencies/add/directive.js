@@ -5,27 +5,39 @@
         return {
             restrict: 'EA',
             replace: true,
-            templateUrl: './src/app/adverts/rent/add/template.html',
+            templateUrl: './src/app/agencies/add/template.html',
             scope: {},
             controllerAs: 'vm',
             bindToController: true,
             /* jshint unused:false*/
-            controller: function($log, AddAgenciesService) {
+            controller: function($log,$state, AddAgenciesService) {
                 var vm=this;
 
-                var addAgencie = function(){
-                    $log.debug('click add agencie');
+                vm.agencie = {};
+                vm.agencie.address = {};
+
+                vm.agencie.email= "briansoufir4@hotmail.com";
+                vm.agencie.name= "Agence test de brian";
+                vm.agencie.phone= "0786075550";
+                vm.agencie.address.country= "France";
+                vm.agencie.address.city= "Paris";
+                vm.agencie.address.zipcode= "75012";
+                vm.agencie.address.street= "Rue baron leroy";
+                vm.agencie.address.building= "32";
+
+
+                vm.addAgencie = function(){
+                    $log.info('click add agencie');
+                    AddAgenciesService.addAgencie(vm.agencie)
+                        .then(function(result) {
+                            $state.reload('root.agencies');
+                            $log.debug('add agencies in directives :',result.data);
+                        }, function(error){
+                            $log.error('Error add agencies', error);
+                        });
+                    
                 };
 
-                AddAgenciesService.addAgencie()
-                    .then(function(result) {
-                        $log.debug('add agencies in directives :',result.data);
-                        vm.agencie = result.data;
-
-                    }, function(error){
-                        $log.error('Error add agencies', error);
-                    });
-                
             },
             link: function(scope, elm, attrs){
             }
