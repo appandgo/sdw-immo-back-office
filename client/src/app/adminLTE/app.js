@@ -35,6 +35,7 @@ adminLTE.directive('sidebar', function(){
 	};
 });
 
+
 adminLTE.directive('header',function(){
 	return {
 		restrict: 'E',
@@ -44,6 +45,7 @@ adminLTE.directive('header',function(){
 		}
 	};
 });
+
 
 adminLTE.directive('footer',function(){
   return {
@@ -65,7 +67,7 @@ adminLTE.directive('leftSidebar', function(){
       controllerAs: 'vm',
       bindToController: true,
       /* jshint unused:false*/
-      controller: function($log, AgenciesService) {
+      controller: function($log, value_user) {
           var vm=this;
           // AgenciesService.getAgencies()
           //     .then(function(agencies) {
@@ -75,6 +77,9 @@ adminLTE.directive('leftSidebar', function(){
           //     }, function(error){
           //         $log.error('Error agencies', error);
           //     });
+
+        vm.user={};
+        vm.user=value_user;
           
       },
       link: function(scope, elm, attrs){
