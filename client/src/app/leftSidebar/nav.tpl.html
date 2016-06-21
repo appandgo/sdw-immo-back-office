@@ -7,9 +7,9 @@
               <img src="assets/img/avatar.png" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Brian soufir</p>
+              <p > {{vm.user.first_name }} {{vm.user.last_name }}</p>
 
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+              <a href="#"><i ng-class="{'text-success': vm.user.state }" class="fa fa-circle "></i> {{vm.user.state ? "online":"offline" }} </a>
             </div>
           </div>
 
@@ -36,7 +36,7 @@
               </ul>
             </li>
 
-            <li  >
+            <li  ng-class="{active: isActive('root.users')}">
               <a ui-sref="root.agencies" >
                 <i class="fa fa-building-o"></i> <span>Agences</span>
               </a>
