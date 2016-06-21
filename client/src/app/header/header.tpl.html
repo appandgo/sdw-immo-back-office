@@ -4,7 +4,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels 
       <span class="logo-mini"><b>Immo</b></span>-->
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Immo</b>France</span>
+      <span class="logo-lg"><b>Max</b>immo</span>
     </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -21,14 +21,14 @@
               <li class="dropdown user user-menu" dropdown>
                 <a href="" class="dropdown-toggle" dropdown-toggle>
                   <img src="assets/img/avatar.png" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">Brian Soufir</span>
+                  <span class="hidden-xs">{{user.first_name}} {{user.last_name}} </span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="assets/img/avatar.png" class="img-circle" alt="User Image" />
                     <p>
-                      Brian soufir - Admin
+                      {{user.first_name}} {{user.last_name}} - {{user.role==1?'Super Admin':'Admin'}} 
                       <small>Membre depuis le 01/06/2016</small>
                     </p>
                   </li>
@@ -48,7 +48,7 @@
                       <a href="" class="btn btn-default btn-flat">Profil</a>
                     </div>
                     <div class="pull-right">
-                      <a href="" class="btn btn-default btn-flat">Déconnexion</a>
+                      <a href="#login" class="btn btn-default btn-flat">Déconnexion</a>
                     </div>
                   </li>
                 </ul>
