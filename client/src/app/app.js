@@ -6,7 +6,7 @@
   });
 
   function config($stateProvider, $urlRouterProvider, $logProvider, $httpProvider) {
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('login');
     $logProvider.debugEnabled(true);
     $httpProvider.interceptors.push('httpInterceptor');
     $stateProvider
