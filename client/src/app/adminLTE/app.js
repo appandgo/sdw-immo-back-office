@@ -18,65 +18,11 @@ if (typeof jQuery === "undefined") {
   throw new Error("AdminLTE requires jQuery");
 }
 
+
 var adminLTE = angular.module('AdminLTE',['ui.router','chart.js','angular-flot','ui.bootstrap']);
 
 adminLTE.config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider,$stateProvider){
-	$urlRouterProvider.otherwise('/dashboard1');
-	/*$stateProvider
-	.state('dashboard1',{
-		url: '/dashboard1',
-		templateUrl:'partials/dashboard1.html'
-	})
-	.state('dashboard2',{
-		url: '/dashboard2',
-		templateUrl:'partials/dashboard2.html'
-	})
-	.state('chartjs',{
-		url: '/charts/chartjs',
-		templateUrl:'partials/charts/chartjs.html'
-	})
-	.state('inline',{
-		url: '/charts/inline',
-		templateUrl:'partials/charts/inline.html'
-	})
-	.state('flot',{
-		url: '/charts/flot',
-		templateUrl:'partials/charts/flot.html'
-	})
-	.state('morris',{
-		url: '/charts/morris',
-		templateUrl:'partials/charts/morris.html'
-	})
-	.state('widgets',{
-		url: '/widgets',
-		templateUrl:'partials/widgets.html'
-	})
-	.state('uibuttons',{
-		url: '/UI/buttons',
-		templateUrl:'partials/UI/buttons.html'
-	})
-	.state('uigeneral',{
-		url: '/UI/general',
-		templateUrl:'partials/UI/general.html'
-	})
-	.state('uiicons',{
-		url: '/UI/icons',
-		templateUrl:'partials/UI/icons.html'
-	})
-	.state('uimodals',{
-		url: '/UI/modals',
-		templateUrl:'partials/UI/modals.html'
-	})
-	.state('uisliders',{
-		url: '/UI/sliders',
-		templateUrl:'partials/UI/sliders.html'
-	})
-	.state('uitimeline',{
-		url: '/UI/timeline',
-		templateUrl:'partials/UI/timeline.html'
-	});*/
-	
-	;
+	//$urlRouterProvider.otherwise('/dashboard1');
 }]);
 
 adminLTE.directive('sidebar', function(){
@@ -89,6 +35,7 @@ adminLTE.directive('sidebar', function(){
 	};
 });
 
+
 adminLTE.directive('header',function(){
 	return {
 		restrict: 'E',
@@ -99,21 +46,47 @@ adminLTE.directive('header',function(){
 	};
 });
 
+
 adminLTE.directive('footer',function(){
   return {
     restrict: 'E',
     templateUrl: 'src/app/footer/footer.tpl.html',
-    /*compile: function(tElement, tAttrs, transclude){
+    compile: function(tElement, tAttrs, transclude){
       $.AdminLTE.pushMenu($(tElement).find('.sidebar-toggle'));
-    }*/
+    }
   };
 });
 
 adminLTE.directive('leftSidebar', function(){
-  return {
-    restrict: 'E',
-    templateUrl: 'src/app/sidebar/nav.tpl.html',
+
+    return {
+      restrict: 'EA',
+      replace: true,
+      templateUrl: './src/app/leftSidebar/nav.tpl.html',
+      scope: {},
+      controllerAs: 'vm',
+      bindToController: true,
+      /* jshint unused:false*/
+      controller: function($log, value_user) {
+          var vm=this;
+          // AgenciesService.getAgencies()
+          //     .then(function(agencies) {
+          //         console.log('agencies in directives :',agencies.data);
+          //         vm.agencies = agencies.data;
+
+          //     }, function(error){
+          //         $log.error('Error agencies', error);
+          //     });
+
+        vm.user={};
+        vm.user=value_user;
+          
+      },
+      link: function(scope, elm, attrs){
+      }
   };
+
+
 });
 
 adminLTE.directive('knob',function(){
@@ -894,6 +867,7 @@ $.AdminLTE.tree = function (menu) {
     var $this = $(this);
     var checkElement = $this.next();
 
+
     //Check if the next element is a menu and is visible
     if ((checkElement.is('.treeview-menu')) && (checkElement.is(':visible'))) {
       //Close the menu
@@ -924,6 +898,19 @@ $.AdminLTE.tree = function (menu) {
         //Fix the layout in case the sidebar stretches over the height of the window
         _this.layout.fix();
       });
+    }
+    else{
+
+      //Get the parent menu
+      var parent = $this.parents('ul').first();
+      //Close all open menus within the parent
+      var ul = parent.find('ul:visible').slideUp('normal');
+      //Get the parent li
+      var parent_li = $this.parent("li");
+
+      parent.find('li.active').removeClass('active');
+      parent_li.addClass('active');
+
     }
     //if this isn't a link, prevent the page from being redirected
     if (checkElement.is('.treeview-menu')) {

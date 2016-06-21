@@ -46,19 +46,19 @@
 
 </head>
 
-<body class="skin-blue sidebar-mini" >
+<body  ng-class="{'skin-blue sidebar-mini': isRoot()}" class="" >
 
     <div class="wrapper">
-      <header class="main-header"></header>
+      <div  ui-view="header" ></div>
 
       <!-- Left side column. contains the logo and sidebar -->
-      <left-sidebar></left-sidebar>
+      <div  ui-view="leftSidebar" ></div>
 
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper" ui-view></div>
+      <!-- Content Wrapper. Contains page content  class="content-wrapper" -->
+      <div ng-class="{'content-wrapper': isRoot()}"  ui-view ></div>
       <!-- /.content-wrapper -->
 
-      <footer class="main-footer"></footer>
+      <div  ui-view="footer" ></div>
 
     </div><!-- ./wrapper -->
 
@@ -73,42 +73,12 @@
 
 
 
-
-    <!-- Angular files -->
-    <script type="text/javascript" src="src/app/home/home.js"></script>
-
-    <!-- build:js assets/js/main.js -->
-    <script type="text/javascript" src="src/app/app.js"></script>
-
-    <script type="text/javascript" src="src/common/interceptors/httpInterceptor.js"></script>
-    <script type="text/javascript" src="src/common/filters/uppercase.js"></script>
-
-    <script type="text/javascript" src="src/app/header/header.js"></script>
-    <script type="text/javascript" src="src/app/footer/footer.js"></script>
-
-    <script type="text/javascript" src="tmp/templates.js"></script>
-
-
-
-      <!-- Users  -->
-      <script type="text/javascript" src="src/app/users/directive.js"></script>
-      <script type="text/javascript" src="src/app/users/route.js"></script>
-      <script type="text/javascript" src="src/app/users/factory.js"></script>
-      <!-- end users -->
-
-
-    <!-- endbuild -->
-
-
-
-
-
     <!-- AdminLTE -->
 
     <!-- jQuery 2.1.3 -->
     <script src="src/plugins/jQuery/jQuery-2.1.3.min.js"></script>
     <!-- Bootstrap 3.3.2 JS -->
-    <!--<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>-->
+    <script src="src/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="src/vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <!-- FastClick -->
     <script src='src/plugins/fastclick/fastclick.min.js'></script>
@@ -150,9 +120,102 @@
     <script src="src/vendor/raphael/raphael-min.js"></script>
     <!--<script src="src/vendor/morris/morris.min.js" type="text/javascript"></script>-->
 
+
+
+
+    <!-- Angular files -->
+
     <!-- AdminLTE App -->
     <script src="src/app/adminLTE/app.js" type="text/javascript"></script>
     <!-- End Back office  -->
+
+
+    <!-- build:js assets/js/main.js -->
+    <script type="text/javascript" src="src/app/app.js"></script>
+
+    <script type="text/javascript" src="src/common/interceptors/httpInterceptor.js"></script>
+    <script type="text/javascript" src="src/common/filters/uppercase.js"></script>
+
+    <script type="text/javascript" src="src/app/header/header.js"></script>
+    <script type="text/javascript" src="src/app/footer/footer.js"></script>
+
+    <script type="text/javascript" src="tmp/templates.js"></script>
+
+
+
+      <!-- Components  -->
+      <script type="text/javascript" src="src/common/components/lightState/directive.js"></script>
+      <!-- end Components -->
+
+      <!-- Home page  -->
+      <script type="text/javascript" src="src/app/home/home.js"></script>
+      <!-- end Home Page -->
+
+
+      <!-- Login page  -->
+      <script type="text/javascript" src="src/app/login/controller.js"></script>
+      <script type="text/javascript" src="src/app/login/route.js"></script>
+      <script type="text/javascript" src="src/app/login/service.js"></script>
+      <!-- end Home Page -->
+
+      <!-- List Users  -->
+      <script type="text/javascript" src="src/app/users/list/directive.js"></script>
+      <script type="text/javascript" src="src/app/users/list/route.js"></script>
+      <script type="text/javascript" src="src/app/users/list/factory.js"></script>
+      <!-- end users -->
+
+      <!-- Add Users  -->
+      <script type="text/javascript" src="src/app/users/add/directive.js"></script>
+      <script type="text/javascript" src="src/app/users/add/factory.js"></script>
+      <!-- end users -->
+
+      <!-- List Agencies  -->
+      <script type="text/javascript" src="src/app/agencies/list/directive.js"></script>
+      <script type="text/javascript" src="src/app/agencies/list/route.js"></script>
+      <script type="text/javascript" src="src/app/agencies/list/factory.js"></script>
+      <!-- end List Agencies -->
+
+      <!-- Add Agencies  -->
+      <script type="text/javascript" src="src/app/agencies/add/directive.js"></script>
+      <script type="text/javascript" src="src/app/agencies/add/factory.js"></script>
+      <!--end Add Agencies -->
+
+      <!-- List Rent adverts  -->
+      <script type="text/javascript" src="src/app/adverts/rent/list/directive.js"></script>
+      <script type="text/javascript" src="src/app/adverts/rent/list/route.js"></script>
+      <script type="text/javascript" src="src/app/adverts/rent/list/factory.js"></script>
+      <!-- end Rent adverts -->
+
+      <!-- Add Rent adverts  -->
+      <script type="text/javascript" src="src/app/adverts/rent/add/directive.js"></script>
+      <script type="text/javascript" src="src/app/adverts/rent/add/factory.js"></script>
+      <!-- end Rent adverts -->
+
+      <!-- List Sale adverts  -->
+      <script type="text/javascript" src="src/app/adverts/sale/list/directive.js"></script>
+      <script type="text/javascript" src="src/app/adverts/sale/list/route.js"></script>
+      <script type="text/javascript" src="src/app/adverts/sale/list/factory.js"></script>
+      <!-- end List Sale adverts -->
+
+      <!-- Add Sale adverts  -->
+      <script type="text/javascript" src="src/app/adverts/sale/add/directive.js"></script>
+      <script type="text/javascript" src="src/app/adverts/sale/add/factory.js"></script>
+      <!-- end List Sale adverts -->
+
+      <!-- Add Sale adverts  -->
+      <script type="text/javascript" src="src/app/adverts/sale/add/directive.js"></script>
+      <script type="text/javascript" src="src/app/adverts/sale/add/factory.js"></script>
+      <!-- end Add Sale adverts -->
+
+
+
+    <!-- endbuild -->
+
+
+
+
+
+
 
 
 

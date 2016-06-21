@@ -1,0 +1,111 @@
+  <div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addSaleAdvert">Add</button>
+
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="addSaleAdvert">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="gridSystemModalLabel">Ajouter un bien à vendre</h4>
+          </div>
+          <div class="modal-body">
+
+            <form class="row">
+
+
+
+              <div class="form-group col-md-12">
+                <label for="recipient-name" class="control-label">Description</label>
+                <textarea ng-model="vm.saleAdvert.description" type="text" class="form-control" id="recipient-name"></textarea>
+              </div>
+
+              <div class="form-group col-md-12 ">
+                <label for="saleAdvertType" class="control-label">Type de bien</label>
+                <select name="singleSelect" ng-model="vm.saleAdvert.type" id="saleAdvertType" class="form-control">
+                  <option value="0" >Appartement</option>
+                  <option value="1">Maison</option>
+                </select>
+              </div>
+              <br>
+
+
+
+              <div class="form-group col-md-3">
+                <label for="message-text" class="control-label">Prix</label>
+                <input ng-model="vm.saleAdvert.characteristics.price" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="message-text" class="control-label">Superficie</label>
+                <input ng-model="vm.saleAdvert.characteristics.area" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="message-text" class="control-label">Nombre de pièces</label>
+                <input ng-model="vm.saleAdvert.characteristics.rooms" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+
+              <div class="form-group col-md-3">
+                <label for="message-text" class="control-label">Nombre de chambres</label>
+                <input ng-model="vm.saleAdvert.characteristics.bedrooms" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+
+              <div class="form-group col-md-4">
+                <label for="message-text" class="control-label">Prénom du propriétaire</label>
+                <input ng-model="vm.saleAdvert.owner.first_name" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+
+              <div class="form-group col-md-4">
+                <label for="message-text" class="control-label">Nom du propriétaire</label>
+                <input ng-model="vm.saleAdvert.owner.last_name" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="message-text" class="control-label">Téléphone du propriétaire</label>
+                <input ng-model="vm.saleAdvert.owner.phone" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-2">
+                <label for="message-text" class="control-label">N°</label>
+                <input ng-model="vm.saleAdvert.address.building" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="message-text" class="control-label">Rue</label>
+                <input ng-model="vm.saleAdvert.address.street" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="message-text" class="control-label">Code postale</label>
+                <input ng-model="vm.saleAdvert.address.zipcode" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+
+              <div class="form-group col-md-6">
+                <label for="message-text" class="control-label">Ville</label>
+                <input ng-model="vm.saleAdvert.address.city" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="message-text" class="control-label">Pays</label>
+                <input ng-model="vm.saleAdvert.address.country" type="text" class="form-control" id="message-text"></input>
+              </div>
+
+
+
+
+            </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            <button type="button" class="btn btn-primary" ng-click="vm.addSaleAdvert()" >Enregistrer</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </div>
+

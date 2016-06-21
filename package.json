@@ -1,16 +1,15 @@
 {
-  "author": "Alessandro Arnodo",
-  "name": "angular-kickstart",
-  "email": "alessandro@arnodo.net",
-  "url": "http://alessandro.arnodo.net",
-  "version": "1.1.0",
-  "homepage": "https://github.com/vesparny/angular-kickstart",
-  "description": "Speed up your AngularJS development whith a great build system.",
+  "author": "Brian soufir <briansoufir4@hotmail.com>",
+  "name": "sdw-immo-back-office",
+  "email": "briansoufir4@hotmail.com",
+  "url": "",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mopiou/sdw-immo-back-office",
+  "description": "Admin dashboard and control panel.",
   "license": "MIT",
-  "bugs": "https://github.com/vesparny/angular-kickstart/issues",
   "repository": {
     "type": "git",
-    "url": "git@github.com:vesparny/angular-kickstart.git"
+    "url": "git@github.com:mopiou/sdw-immo-back-office.git"
   },
   "devDependencies": {
     "browser-sync": "~2.7.1",

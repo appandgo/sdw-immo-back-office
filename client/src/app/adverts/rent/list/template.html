@@ -1,0 +1,83 @@
+  <div>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Annonces de biens en location
+        <small>gestion des annonces de biens mis en location</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li>annonces</li>
+        <li class="active">location</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">
+                <add-rent-advert></add-rent-advert>
+              </h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Etat</th>
+                    <th>Titre</th>
+                    <th>Type</th>
+                    <th>Loyer</th>
+                    <th>Adresse</th>
+                    <th>Gestion</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr ng-repeat="rentAdvert in vm.rentAdverts"   ><!-- ng-show="rentAdvert.state" -->
+                    <th><light-state state="rentAdvert.state" ></light-state></th>
+                    <th>{{rentAdvert.title}}</th>
+                    <th>{{rentAdvert.type}}</th>
+                    <th>{{rentAdvert.characteristics.rent | currency: "" : 2}} €</th>
+                    <th>{{rentAdvert.address.building}} {{rentAdvert.address.street}} {{rentAdvert.address.zipcode}}, {{rentAdvert.address.city}} {{rentAdvert.address.country}} </th>
+                    <th>
+                      <div class="dropdown">
+                      <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-list"></i>
+                        <!--<span class="caret"></span>-->
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">
+                        <li class="dropdown-header">Configurer votre annonce</li>
+                        <li>Détails</li>
+                        <li>Modifier</li>
+                        <li ng-click="vm.deleteRentAdvert(rentAdvert._id)" >Supprimmer</li>
+                        <li class="dropdown-header">Autres</li>
+                        <li>Détail propriétaire</li>
+                        <li>Détail agence</li>
+                      </ul>
+                    </div>
+
+                    </th>
+                  </tr>
+
+                </tbody>
+                <!--<tfoot>
+                  <tr>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Pseudo</th>
+                    <th>Rôle</th>
+                    <th>Mail</th>
+                    <th>Télephone</th>
+                    <th>Gestion</th>
+                  </tr>
+                </tfoot>-->
+              </table>
+            </div><!-- /.box-body -->
+          </div><!-- /.box -->
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </section><!-- /.content -->
+  </div>
