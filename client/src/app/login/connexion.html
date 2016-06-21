@@ -1,25 +1,36 @@
 
+    <div class="login-box">
+      <div class="login-logo">
+        <a href=""><b>Max</b>immo</a>
+      </div><!-- /.login-logo -->
+      <div class="login-box-body">
+        <p class="login-box-msg">Connectez vous</p>
+        <form  ng-submit="login()">
+          <div class="form-group has-feedback">
+            <input type="text" class="form-control" placeholder="Nom d'utilisateur" ng-model="loginData.username" />
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="password" class="form-control" placeholder="Mot de passe" ng-model="loginData.password" />
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </div>
+          <div class="row">
+            <div class="col-xs-8">    
+              <!--<div class="checkbox icheck">
+                <label>
+                  <input type="checkbox"> Se rappeler de moi
+                </label>
+              </div>  -->                      
+            </div><!-- /.col -->
+            <div class="col-xs-4">
+              <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+            </div><!-- /.col -->
+          </div>
+        </form>
 
 
-  <h1 class="energized">J'MARKET</h1>
-<!--<hr>-->
-    <form ng-submit="doLogin()">
-      <div class="list list-inset" >
-        <div class="div-padding">
-          <label  style="color:#29a9c0;font-weight:bold;">
-            Merci de vous identifier.
-          </label>
-        </div>
-        <label class="item item-input input-login">
-          <input type="text" ng-model="loginData.username" placeholder="Votre e-mail" required>
-        </label>
-        <label class="item item-input input-password">
-          <input type="password" ng-model="loginData.password" placeholder="Mot de passe" required>
-        </label>
-        <label class="padding-top">
-          <button class="button button-block button-energized " type="submit">S'identifier</button>
-        </label>
-      </div>
-    </form>
-  
 
+        <a href="#">Mot de passe oublié ?</a><br>
+
+      </div><!-- /.login-box-body -->
+    </div><!-- /.login-box -->

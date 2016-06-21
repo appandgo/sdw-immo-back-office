@@ -1,10 +1,10 @@
 function ConnexionService($http,API,$log){
 
     var service = {};
-    service.connexion = [];
+    service.user = [];
 
     var loginSuccess = function(data) {
-      service.connexion = data ;
+      service.user = data ;
       console.log(data);
     }
     var loginError= function(error) {
@@ -12,20 +12,26 @@ function ConnexionService($http,API,$log){
     }
 
     service.login = function (login , passwd) {
-        return $http.get(API.URL,{
-            params:{
-              module:"connexion",
-              action:"login",
-              apiKey: API.KEY,
-              login:login,
-              password:passwd
-            }
-        })
-        .success(loginSuccess)
-        .error(loginError)
+
+            var data ={
+                username : login ,
+                password : passwd,
+
+            };
+
+
+            return $http.post(API.URL+'users/login',data)
+            .success(function(data) {
+                $log.debug('login ', data);
+                service.user = data
+            })
+            .error(function(error) {
+                $log.error('Error login', error);
+            })
+
     };
     return service;
 };
 
-angular.module('app.services.connexion', [])
+angular.module('app.services.login', [])
 .factory('ConnexionService', ConnexionService);

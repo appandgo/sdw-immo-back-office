@@ -1,13 +1,13 @@
   var config = function ($stateProvider) {
   	$stateProvider
-	    .state('connexion', {
-	      url: '/connexion',
+	    .state('login', {
+	      url: '/login',
 	      abstract: false,
-	      templateUrl: 'app/connexion/connexion.html',
+	      templateUrl: './src/app/login/connexion.html',
 	      controller: 'ConnexionCtrl',
 	    });
     };
 
-angular.module('app.routes.connexion', [])
+angular.module('app.routes.login', [])
 .config(config);
 
