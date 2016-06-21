@@ -91,7 +91,6 @@
       'app.directives.adverts.sale.list',
       'app.routes.adverts.sale.list',
       'app.services.adverts.sale.list',
-
       // Add Sale adverts
       'app.directives.adverts.sale.add',
       'app.services.adverts.sale.add',
@@ -101,7 +100,6 @@
     .constant("API", {
         "URL": "https://sdw-immo-backend.herokuapp.com/",
         //"KEY": "FMpobv25eCmopiv5z57cZMovjz28vaPibve6",
-        //"ID_OP":66
     })
     .value('value_user', {
       idUser:'',
