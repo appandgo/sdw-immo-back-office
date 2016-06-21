@@ -46,19 +46,19 @@
 
 </head>
 
-<body class="skin-blue sidebar-mini" >
+<body  ng-class="{'skin-blue sidebar-mini': isRoot()}" class="" >
 
     <div class="wrapper">
-      <header class="main-header"></header>
+      <div  ui-view="header" ></div>
 
       <!-- Left side column. contains the logo and sidebar -->
-      <left-sidebar> </left-sidebar>
+      <div  ui-view="leftSidebar" ></div>
 
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper" ui-view></div>
+      <!-- Content Wrapper. Contains page content  class="content-wrapper" -->
+      <div ng-class="{'content-wrapper': isRoot()}"  ui-view ></div>
       <!-- /.content-wrapper -->
 
-      <footer class="main-footer"></footer>
+      <div  ui-view="footer" ></div>
 
     </div><!-- ./wrapper -->
 
@@ -149,6 +149,13 @@
 
       <!-- Home page  -->
       <script type="text/javascript" src="src/app/home/home.js"></script>
+      <!-- end Home Page -->
+
+
+      <!-- Login page  -->
+      <script type="text/javascript" src="src/app/login/controller.js"></script>
+      <script type="text/javascript" src="src/app/login/route.js"></script>
+      <script type="text/javascript" src="src/app/login/service.js"></script>
       <!-- end Home Page -->
 
       <!-- List Users  -->

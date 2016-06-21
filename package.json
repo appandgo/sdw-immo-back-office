@@ -4,12 +4,12 @@
   "email": "briansoufir4@hotmail.com",
   "url": "",
   "version": "1.0.0",
-  "homepage": "https://github.com/vesparny/angular-kickstart",
+  "homepage": "https://github.com/mopiou/sdw-immo-back-office",
   "description": "Admin dashboard and control panel.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:vesparny/angular-kickstart.git"
+    "url": "git@github.com:mopiou/sdw-immo-back-office.git"
   },
   "devDependencies": {
     "browser-sync": "~2.7.1",

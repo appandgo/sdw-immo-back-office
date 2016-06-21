@@ -13,31 +13,56 @@
       .state('root', {
         views: {
           'header': {
-            templateUrl: 'src/app/header/header.tpl.html',
-            controller: 'HeaderCtrl'
+            template: '<header class="main-header"></header>',
           },
-          'footer': {
-            templateUrl: 'src/app/footer/footer.tpl.html',
-            controller: 'FooterCtrl'
+          'leftSidebar': {
+            template: '<left-sidebar> </left-sidebar>',
+          },
+         'footer': {
+            template: '',
+            //<footer class="main-footer"></footer>
           }
         }
       });
   }
 
-  function MainCtrl($log,$state) {
+  function MainCtrl($scope,$log,$state,value_user) {
     $log.debug('MainCtrl laoded!');
 
-    this.isActive = function (viewLocation) { 
-          $log.info(' is active ? !');
+    // A mettre dans la directive leftSidebar
+    $scope.user = {};
+    $scope.user = value_user;
+    $log.debug($scope.user);
+
+    $scope.isActive = function (viewLocation) {
+
+      $log.info(' is active ? ');
+      $log.info(viewLocation);
+      $log.info($state.is(viewLocation));
+      //$log.info($state.);
+
+
 
       //return viewLocation === $location.path();
-      $log.info($state.is(viewLocation));
-      $log.info($state.is('.users'));
-      $log.info($state.include('root'));
-      $log.info($state.is('root.users'));
+      //$log.info($state.is(viewLocation));
+      //$log.info($state.is('.users'));
+      //$log.info($state.include('root'));
+      //$log.info($state.is('root.users'));
 
-      $state.is(viewLocation);
+      return $state.is(viewLocation);
     };
+
+    $scope.isRoot = function () { 
+
+      //$log.info(' is root ? !');
+
+      //$log.info(!$state.is('login'));
+
+    return !$state.is('login');
+    };
+
+
+
   }
 
   function run($log) {
@@ -59,6 +84,11 @@
 
       // Components
       'app.directives.components.lightState',
+
+      // Login
+      'app.controllers.login',
+      'app.routes.login',
+      'app.services.login',
 
       // List Users
       'app.directives.users.list',
@@ -91,7 +121,6 @@
       'app.directives.adverts.sale.list',
       'app.routes.adverts.sale.list',
       'app.services.adverts.sale.list',
-
       // Add Sale adverts
       'app.directives.adverts.sale.add',
       'app.services.adverts.sale.add',
@@ -101,17 +130,21 @@
     .constant("API", {
         "URL": "https://sdw-immo-backend.herokuapp.com/",
         //"KEY": "FMpobv25eCmopiv5z57cZMovjz28vaPibve6",
-        //"ID_OP":66
     })
     .value('value_user', {
-      idUser:'',
-      nom:'',
-      prenom:'',
-      pseudo:'',
+      id:'576870a0305693c102d96e17',
+      last_name:'DESCHAMPS',
+      first_name:'Didier',
+      role:'0',
       email:'',
-      sessionId:'',
-      idOperation:''
+      phone:'',
+      state:false,
+      token:''
     })    
+
+
+
+
 
     .config(config)
     .run(run)
